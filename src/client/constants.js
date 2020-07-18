@@ -1,5 +1,11 @@
 export const pad = 25;
 
+export const ORIENTATION = {
+  HORIZ: 'h',
+  VERT: 'v',
+}
+
+
 export const bounds = {
   height: 1080,
   width: 1920,
@@ -7,11 +13,11 @@ export const bounds = {
 
 export const border = {
   color: 'orange',
-  thickness: bounds.height / 27,
+  thickness: bounds.height / 20,
 };
 
 export const brand = {
-  width: 200,
+  width: 250,
   height: border.thickness,
 };
 

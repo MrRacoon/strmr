@@ -6,7 +6,7 @@ const Brand = ({
   textPad = 30,
   background = 'grey',
   shadow = 'black',
-  border = 5,
+  border = 2,
   color = 'white',
   stroke = 'black',
   strokeWidth = 0.7,
@@ -15,8 +15,8 @@ const Brand = ({
     <g>
       <rect
         id="brand-backing"
-        x={x}
-        y={y}
+        x={x + border}
+        y={y + border}
         rx={20}
         height={h}
         width={w}

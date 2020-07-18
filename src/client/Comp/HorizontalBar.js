@@ -1,7 +1,6 @@
-import React from 'react';
+import React from 'react'; 
 
-const HealthBar = ({ 
-  x, y, w, h,
+const HorizontalBar = ({ x, y, w, h,
   pct = 0.8,
   rx = 10,
   shadow = 3,
@@ -11,12 +10,12 @@ const HealthBar = ({
   const pad = h * 0.2;
   const barHt = h - (2 * pad);
 
-  const innerPad = h * 0.2;
+  const innerPad = barHt * 0.3;
   const innerBarHt = barHt - (2 * innerPad);
   return (
     <g>
       <rect
-        key="healthbar-shadow"
+        key="horizontalbar-shadow"
         x={x + shadow}
         y={pad + shadow}
         height={barHt}
@@ -25,7 +24,7 @@ const HealthBar = ({
         rx={rx}
       />,
       <rect
-        key="healthbar-base"
+        key="horizontalbar-base"
         x={x}
         y={pad}
         height={barHt}
@@ -34,7 +33,7 @@ const HealthBar = ({
         rx={rx}
       />,
       <rect
-        key="healthbar-inner"
+        key="horizontalbar-inner"
         x={x + innerPad}
         y={pad + innerPad}
         height={innerBarHt}
@@ -43,7 +42,7 @@ const HealthBar = ({
         rx={rx}
       />,
       <rect
-        key="healthbar-contents"
+        key="horizontalbar-contents"
         x={x + innerPad}
         y={pad + innerPad}
         height={innerBarHt}
@@ -55,4 +54,4 @@ const HealthBar = ({
   );
 };
 
-export default HealthBar;
+export default HorizontalBar;

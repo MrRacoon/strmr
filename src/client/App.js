@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import * as R from 'ramda';
 import './app.css';
 import ReactImage from './react.png';
+import HealthBar from './Healthbar';
+import Anims from './Anims';
+import D3 from './D3';
+
 
 export default class App extends Component {
   state = { username: null };
@@ -13,10 +18,10 @@ export default class App extends Component {
 
   render() {
     const { username } = this.state;
+    const data = R.range(0, 100);
     return (
       <div>
-        {username ? <h1>{`Hello ${username}`}</h1> : <h1>Loading.. please wait!</h1>}
-        <img src={ReactImage} alt="react" />
+        <D3 data={data}/>
       </div>
     );
   }

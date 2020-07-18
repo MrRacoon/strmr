@@ -9,6 +9,11 @@ export default ({ data }) => {
       height: 1080,
     };
 
+    const streamerWindow = {
+      width: 599,
+      height: 337,
+    };
+
     useEffect(
         () => {
             console.log('out');
@@ -25,8 +30,8 @@ export default ({ data }) => {
                 console.log('the initial state of the elements');
                 const circles = update.enter()
                     .append('circle')
-                    .attr('r', () => 10 + (Math.random() * 10))
-                    .attr('fill', 'blue')
+                    .attr('r', () => 5 + (Math.random() * 10))
+                    .attr('fill', 'red')
 
                 function rain () {
                   const ix = Math.random() * bounds.width;
@@ -35,7 +40,7 @@ export default ({ data }) => {
                     .attr('cx', () => ix)
                     .attr('cy', () => iy)
                     .transition()
-                    .duration(1000)
+                    .duration(500)
                     .ease(d3.easeLinear)
                     .attr('cy', -1 * iy + bounds.height)
                     .on('end', rain)
@@ -70,7 +75,10 @@ export default ({ data }) => {
             width={bounds.width}
             height={bounds.height}
             ref={d3Container}
-        />
+        >
+            <g>
+            </g>
+        </svg>
       </div>
     );
 }

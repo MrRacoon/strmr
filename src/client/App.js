@@ -5,6 +5,7 @@ import ReactImage from './react.png';
 import HealthBar from './Healthbar';
 import Anims from './Anims';
 import D3 from './D3';
+import Border from './Border';
 
 
 export default class App extends Component {
@@ -22,6 +23,7 @@ export default class App extends Component {
     return (
       <div>
         <D3 data={data}/>
+        <Border />
       </div>
     );
   }

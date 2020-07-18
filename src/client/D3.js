@@ -21,17 +21,27 @@ export default ({ data }) => {
                     .selectAll('circle')
                     .data(data);
 
+
                 console.log('the initial state of the elements');
-                update.enter()
+                const circles = update.enter()
                     .append('circle')
-                    .attr('cx', () => Math.random() * bounds.width)
-                    .attr('cy', () => Math.random() * bounds.height * -1)
-                    .attr('r', () => Math.random() * 10)
+                    .attr('r', () => 10 + (Math.random() * 10))
                     .attr('fill', 'blue')
-                  .transition()
-                    .duration(10000)
-                    .ease(d3.easeBounce)
-                    .attr('cy', bounds.height)
+
+                function rain () {
+                  const ix = Math.random() * bounds.width;
+                  const iy = Math.random() * bounds.height * -1;
+                  circles
+                    .attr('cx', () => ix)
+                    .attr('cy', () => iy)
+                    .transition()
+                    .duration(1000)
+                    .ease(d3.easeLinear)
+                    .attr('cy', -1 * iy + bounds.height)
+                    .on('end', rain)
+                }
+
+              rain()
 
               /*
                 console.log('updates and transitions');

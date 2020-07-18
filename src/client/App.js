@@ -20,9 +20,9 @@ export default class App extends Component {
   render() {
     const { username } = this.state;
     const data = R.range(0, 10);
+    // <D3 data={data}/>
     return (
       <div>
-        <D3 data={data}/>
         <Border />
       </div>
     );

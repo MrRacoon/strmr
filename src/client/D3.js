@@ -30,8 +30,8 @@ export default ({ data }) => {
                 console.log('the initial state of the elements');
                 const circles = update.enter()
                     .append('circle')
-                    .attr('r', () => 5 + (Math.random() * 10))
-                    .attr('fill', 'red')
+                    .attr('r', () => 10 + (Math.random() * 10))
+                    .attr('fill', 'yellow')
 
                 function rain () {
                   const ix = Math.random() * bounds.width;

@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { brand, bounds, streamerBounds, pad, border, healthbar } from "./constants";
+import { brand, bounds, streamerBounds, pad, border, healthbar } from "../constants";
 
 const containerStyle = {
   postition: "absolute",
@@ -7,7 +7,7 @@ const containerStyle = {
   bottom: streamerBounds.height + pad
 };
 
-export default () => {
+const Border = ({ children }) => {
   const d3Container = useRef();
 
   console.log(bounds)
@@ -65,53 +65,11 @@ export default () => {
             width={border.thickness}
             fill={border.color}
           />
-          <text
-            id="bottom-border"
-            x={border.thickness}
-            y={border.thickness * 0.7}
-            style={brand.style}
-            fill={border.color}
-          >
-              MrRacoon
-          </text>
-          <rect
-            id="healthbar-shadow"
-            x={210 + healthbar.shadow}
-            y={((border.thickness - healthbar.height) / 2) + healthbar.shadow}
-            height={healthbar.height}
-            width={healthbar.width}
-            fill={'black'}
-            rx={healthbar.rounded}
-          />
-          <rect
-            id="healthbar-base"
-            x={210}
-            y={(border.thickness - healthbar.height) / 2}
-            height={healthbar.height}
-            width={healthbar.width}
-            fill={'grey'}
-            rx={healthbar.rounded}
-          />
-          <rect
-            id="healthbar-inner"
-            x={210 + healthbar.border.thick}
-            y={((border.thickness - healthbar.height) / 2) + healthbar.border.thick}
-            height={healthbar.height - (healthbar.border.thick * 2)}
-            width={healthbar.width - (healthbar.border.thick * 2)}
-            fill={healthbar.inner}
-            rx={healthbar.rounded}
-          />
-          <rect
-            id="healthbar-contents"
-            x={210 + healthbar.border.thick}
-            y={((border.thickness - healthbar.height) / 2) + healthbar.border.thick}
-            height={healthbar.height - (healthbar.border.thick * 2)}
-            width={healthbar.width / 2}
-            fill={healthbar.contents.color}
-            rx={healthbar.rounded}
-          />
+          {children}
         </g>
       </svg>
     </div>
   );
 };
+
+export default Border;

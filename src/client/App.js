@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import * as R from 'ramda';
 import './app.css';
-import ReactImage from './react.png';
-import HealthBar from './Healthbar';
-import Anims from './Anims';
-import D3 from './D3';
-import Border from './Border';
-
+import Border from './Comp/Border';
+import Healthbar from './Comp/Healthbar';
+import Brand from './Comp/Brand';
+import { brand, border } from './constants';
 
 export default class App extends Component {
   state = { username: null };
@@ -20,10 +18,22 @@ export default class App extends Component {
   render() {
     const { username } = this.state;
     const data = R.range(0, 10);
-    // <D3 data={data}/>
     return (
       <div>
-        <Border />
+        <Border>
+          <Brand
+            x={border.thickness}
+            y={0}
+            h={border.thickness}
+            w={brand.width}
+          />
+          <Healthbar 
+            x={border.thickness + brand.width + 20}
+            y={0}
+            w={400}
+            h={border.thickness}
+          />
+        </Border>
       </div>
     );
   }

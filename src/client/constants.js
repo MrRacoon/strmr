@@ -5,19 +5,14 @@ export const bounds = {
   width: 1920,
 };
 
-export const brand = {
-  style: {
-    fill: 'white',
-    stroke: 'black',
-    strokeWidth: 0.5,
-    fontSize: '2em',
-    fontFamily: 'helvetica',
-  },
+export const border = {
+  color: 'orange',
+  thickness: bounds.height / 27,
 };
 
-export const border = {
-  color: 'maroon',
-  thickness: bounds.height / 27,
+export const brand = {
+  width: 200,
+  height: border.thickness,
 };
 
 export const streamerBounds = {

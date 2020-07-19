@@ -13,31 +13,29 @@ const VerticalBar = ({
 
   const mainBar = {
     key: 'vertical-bar-main',
-    x: pad,
-    y: y,
-    height: h,
+    x: x + pad,
+    y: y + pad,
+    height: h - (pad + pad),
     width: w - (pad + pad),
     fill: 'grey',
     rx,
   };
 
   const shadowBar = {
+    ...mainBar,
     key: 'vertical-bar-shadow',
     x: mainBar.x + shadow,
     y: mainBar.y + shadow,
-    height: mainBar.height,
-    width: mainBar.width,
     fill: 'black',
-    rx,
   };
 
   const innerPad = mainBar.width * 0.3;
 
   const innerBar = {
     key: 'vertical-bar-inner',
-    x: pad + innerPad,
-    y: y + innerPad,
-    height: h - (2 * innerPad),
+    x: mainBar.x + innerPad,
+    y: mainBar.y + innerPad,
+    height: mainBar.height - (2 * innerPad),
     width: mainBar.width - (2 * innerPad),
     fill: inner,
     rx,
@@ -46,11 +44,10 @@ const VerticalBar = ({
   const contentsHt = (innerBar.height * pct);
 
   const contentsBar = {
+    ...innerBar,
     key: 'vertical-bar-contents',
-    x: pad + innerPad,
     y: innerBar.y + (innerBar.height - contentsHt),
     height: contentsHt,
-    width: innerBar.width,
     fill: contents,
     rx,
   };

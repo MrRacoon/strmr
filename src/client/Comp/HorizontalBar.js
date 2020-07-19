@@ -15,7 +15,7 @@ const HorizontalBar = ({ x, y, w, h,
   return (
     <g>
       <rect
-        key="horizontalbar-shadow"
+        key="healthbar-shadow"
         x={x + shadow}
         y={pad + shadow}
         height={barHt}
@@ -24,7 +24,7 @@ const HorizontalBar = ({ x, y, w, h,
         rx={rx}
       />,
       <rect
-        key="horizontalbar-base"
+        key="healthbar-base"
         x={x}
         y={pad}
         height={barHt}
@@ -33,7 +33,7 @@ const HorizontalBar = ({ x, y, w, h,
         rx={rx}
       />,
       <rect
-        key="horizontalbar-inner"
+        key="healthbar-inner"
         x={x + innerPad}
         y={pad + innerPad}
         height={innerBarHt}
@@ -42,7 +42,7 @@ const HorizontalBar = ({ x, y, w, h,
         rx={rx}
       />,
       <rect
-        key="horizontalbar-contents"
+        key="healthbar-contents"
         x={x + innerPad}
         y={pad + innerPad}
         height={innerBarHt}

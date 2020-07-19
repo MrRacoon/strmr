@@ -4,7 +4,7 @@ import './app.css';
 import Border from './Comp/Border';
 import Brand from './Comp/Brand';
 import Bar from './Comp/Bar';
-import { brand, border, bounds, ORIENTATION } from './constants';
+import { brand, border, bounds, streamerBounds, ORIENTATION } from './constants';
 
 export default class App extends Component {
   state = { username: null };
@@ -43,6 +43,15 @@ export default class App extends Component {
             w={border.thickness}
             h={bounds.height - (border.thickness * 2)}
             contents="blue"
+            pct={0.7}
+          />
+          <Bar
+            orientation={ORIENTATION.VERT}
+            x={bounds.width - border.thickness}
+            y={border.thickness}
+            w={border.thickness}
+            h={(bounds.height - (border.thickness * 2)) - streamerBounds.height}
+            contents="yellowgreen"
             pct={0.1}
           />
         </Border>
